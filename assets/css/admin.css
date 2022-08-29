@@ -1,0 +1,56 @@
+.plugin-packs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2%;
+}
+
+.plugin-packs .plugin-pack {
+    background: white;
+    margin: 5% 10%;
+    padding: 0;
+}
+
+.plugin-packs .plugin-pack .plugin-pack-image {
+    margin: 0;
+    padding: 0;
+}
+
+.plugin-packs .plugin-pack .plugin-pack-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.plugin-packs .plugin-pack .plugin-pack-title {
+    margin: 0;
+    padding: 0.5em 0.5em 0 0.6em;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.plugin-packs .plugin-pack .plugin-pack-types {
+    margin: 0;
+    padding: 0.5em 0.5em 0.5em 1em;
+}
+
+.plugin-packs .plugin-pack .plugin-pack-buttons {
+    padding: 0.5em 0.5em 0.5em 0.7em;
+}
+
+.plugin-packs .plugin-pack .plugin-pack-buttons input {
+    background-color: #0E8BCA;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 4px 5px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.plugin-packs .plugin-pack .plugin-pack-buttons input:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
+}
