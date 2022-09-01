@@ -36,7 +36,7 @@
     padding: 0.5em 0.5em 0.5em 0.7em;
 }
 
-.plugin-packs .plugin-pack .plugin-pack-buttons input {
+.plugin-packs .plugin-pack .plugin-pack-buttons button {
     background-color: #0E8BCA;
     border: none;
     color: white;

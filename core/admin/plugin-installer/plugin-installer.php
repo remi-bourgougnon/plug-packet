@@ -9,7 +9,6 @@ require_once(ABSPATH . '/wp-admin/includes/plugin.php');
 
 class Plug_Packet_Plugin_Installer
 {
-
     function plugin_packs_installer($plugins)
     {
         $wordpress_api = plugins_api('plugin_information',

@@ -45,19 +45,6 @@ function plugin_packs_options_page_html()
         '3' => 'plug-packet/assets/images/cat.jpeg',
     );
 
-    $plugin_pack_plugins = array(
-    );
-
-    //function that is executed when the button is pressed. installs the plugins
-    if (isset($_POST['install-pack-button'])) {
-        require_once plugin_dir_path(__FILE__) . 'plugin-installer/plugin-installer.php';
-        $plugin_pack_installer = new Plug_Packet_Plugin_Installer();
-        foreach ($plugin_pack_plugins as $value) {
-            $plugin_pack_installer->plugin_packs_installer($plugin_pack_plugins[$x]);
-            $x = $x + 1;
-        }
-    }
-
     //function that is executed when the button is pressed. displays more information.
     if (isset($_POST['more-information-button'])) {
         echo "This is Button2 that is selected";
@@ -74,13 +61,8 @@ function plugin_packs_options_page_html()
                 <div class="plugin-pack-title"><?php echo $plugin_pack_titles[$x] ?></div>
                 <div class="plugin-pack-types"><?php echo $plugin_pack_types[$x] ?></div>
                 <div class="plugin-pack-buttons">
-                    <form method="post">
-                        <input class="install-pack-button" type="submit" name="install-pack-button"
-                               value="Install Pack"/>
-
-                        <input class="more-information-button" type="submit" name="more-information-button"
-                               value="More info"/>
-                    </form>
+                    <button class="install-pack-button">Install Pack</button>
+                    <button class="more-information-button">More info</button>
                 </div>
             </div>
             <?php
@@ -90,3 +72,19 @@ function plugin_packs_options_page_html()
     </div>
     <?php
 }
+
+//function that is executed when the button is pressed. installs the plugins
+function plugin_pack_installer () {
+    $plugin_pack_plugins = array(
+        '0' => 'jetpack',
+    );
+    $x = 0;
+    require_once plugin_dir_path(__FILE__) . 'plugin-installer/plugin-installer.php';
+    $plugin_pack_installer = new Plug_Packet_Plugin_Installer();
+    foreach ($plugin_pack_plugins as $value) {
+        $plugin_pack_installer->plugin_packs_installer($plugin_pack_plugins[$x]);
+        $x = $x + 1;
+    }
+    wp_die();
+}
+add_action( 'wp_ajax_plugin_pack_installer', 'plugin_pack_installer' );
