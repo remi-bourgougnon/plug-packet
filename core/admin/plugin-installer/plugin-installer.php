@@ -11,6 +11,7 @@ class Plug_Packet_Plugin_Installer
 {
     function plugin_packs_installer($plugins)
     {
+        $simple_ssl = 'rlrsssl-really-simple-ssl';
         $wordpress_api = plugins_api('plugin_information',
             array(
                 'slug' => $plugins
@@ -20,7 +21,14 @@ class Plug_Packet_Plugin_Installer
         $plugin_upgrader = new Plugin_Upgrader($ajax_upgrader_skin);
         $plugin_upgrader->install($wordpress_api->download_link);
 
-        readfile($plugins . '/' . $plugins . '.php');
-        activate_plugin($plugins . '/' . $plugins . '.php');
+        if (strpos($simple_ssl, $plugins) == false) {
+            readfile($plugins . '/' . $plugins . '.php');
+            activate_plugin($plugins . '/' . $plugins . '.php');
+        }
+
+        elseif (strpos($simple_ssl, $plugins) !== false) {
+            readfile($plugins . '/' . $simple_ssl . '.php');
+            activate_plugin($plugins . '/' . $simple_ssl . '.php');
+        }
     }
 }
