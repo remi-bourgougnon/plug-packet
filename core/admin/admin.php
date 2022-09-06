@@ -12,7 +12,9 @@ function plug_packet_options_page()
         'PlugPacket',
         'manage_options',
         'plugpacket',
-        'plugin_packs_options_page_html'
+        'plugin_packs_options_page_html',
+        25,
+        25
     );
 }
 
@@ -33,7 +35,7 @@ function plugin_packs_options_page_html()
     );
 
     $plugin_pack_images = array(
-        '0' => 'plug-packet/assets/images/cat.jpeg',
+        '0' => 'plug-packet/assets/images/image_pack.png',
     );
 
     //function that is executed when the button is pressed. displays more information.
