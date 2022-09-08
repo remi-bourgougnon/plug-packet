@@ -28,7 +28,7 @@
     font-weight: bold;
 }
 
-.plugin-packs .plugin-pack .plugin-pack-types {
+.plugin-packs .plugin-pack .plugin-pack-list {
     margin: 0;
     padding: 0.5em 0.5em 0.5em 1em;
 }
@@ -53,14 +53,5 @@
 }
 
 .plugin-packs .plugin-pack .plugin-pack-buttons button:hover {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
-}
-
-.plugin-packs .plugin-pack .plugin-pack-buttons .remove-pack-button {
-    display: none;
-    background-color: #c21036;
-}
-
-.plugin-packs .plugin-pack .plugin-pack-buttons input:hover {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
 }
