@@ -1,8 +1,11 @@
 <?php
 
 //enqueue the css file
-wp_enqueue_style('admin.css', '/wp-content/plugins/plug-packet/assets/css/admin.css');
-wp_enqueue_script('admin.js', '/wp-content/plugins/plug-packet/assets/js/admin.js');
+wp_enqueue_style('admin.css', plugins_url(). '/plug-packet/assets/css/admin.css');
+wp_enqueue_script('plp_admin_js', plugins_url() . '/plug-packet/assets/js/admin.js');
+wp_localize_script('plp_admin_js', 'json_url', array(
+    'jsonurl' => plugins_url() . '/plug-packet/assets/data/plugin_packs.json'
+));
 
 //add the top level menu
 function plug_packet_options_page()
@@ -23,24 +26,25 @@ add_action('admin_menu', 'plug_packet_options_page');
 //The plugin packs function.
 function plugin_packs_options_page_html()
 {
-    $plugin_packs = [
-        'Beginner Pack' => [
-            'title' => 'Basic Pack',
-            'list' => [
-                'Elementor Website Builder',
-                'UpdraftPlus WordPress Backup Plugin',
-                'Really Simple SSL'
-            ],
-            'image' => 'plug-packet/assets/images/image_pack.png'
-        ],
-        'Test Pack' => [
-            'title' => 'Test Pack',
-            'list' => [
-                'Beaver Builder – WordPress Page Builder'
-            ],
-            'image' => 'plug-packet/assets/images/image_pack.png'
-        ]
-    ];
+//    $plugin_packs = [
+//        'Beginner Pack' => [
+//            'title' => 'Basic Pack',
+//            'list' => [
+//                'Elementor Website Builder',
+//                'UpdraftPlus WordPress Backup Plugin',
+//                'Really Simple SSL'
+//            ],
+//            'image' => 'plug-packet/assets/images/image_pack.png'
+//        ],
+//        'Test Pack' => [
+//            'title' => 'Test Pack',
+//            'list' => [
+//                'Beaver Builder – WordPress Page Builder'
+//            ],
+//            'image' => 'plug-packet/assets/images/image_pack.png'
+//        ]
+//    ];
+
 
     ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

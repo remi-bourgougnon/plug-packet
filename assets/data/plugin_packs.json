@@ -1,0 +1,18 @@
+{
+  "pack1": {
+    "title": "Basic Pack",
+    "list": [
+      "Elementor",
+      "UpdraftPlus",
+      "Really Simple SSL"
+    ],
+    "image": "plug-packet/assets/images/image_pack.png"
+  },
+  "pack2": {
+    "title": "Test Pack",
+    "list": [
+      "Jetpack"
+    ],
+    "image": "plug-packet/assets/images/image_pack.png"
+  }
+}
