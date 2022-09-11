@@ -1,7 +1,9 @@
 jQuery(document).ready(function($) {
     $.getJSON( json_url.jsonurl, function( data ) {
-        console.log(data.pack1);
-        console.log(data.pack2);
+        jQuery.post('/wp-admin/admin.php?page=plugpacket', { data: data})
+        jQuery.each(data, function(key,value){
+            $('.plugin-pack-image').find('img').attr('src', '/wp-content/plugins/' + value.image);
+        });
     });
 
 

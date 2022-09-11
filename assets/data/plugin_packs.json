@@ -1,5 +1,5 @@
 {
-  "pack1": {
+  "basicpack": {
     "title": "Basic Pack",
     "list": [
       "Elementor",
@@ -8,7 +8,7 @@
     ],
     "image": "plug-packet/assets/images/image_pack.png"
   },
-  "pack2": {
+  "testpack": {
     "title": "Test Pack",
     "list": [
       "Jetpack"

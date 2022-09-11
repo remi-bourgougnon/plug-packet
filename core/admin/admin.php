@@ -45,7 +45,8 @@ function plugin_packs_options_page_html()
 //        ]
 //    ];
 
-
+    $plugin_packs = $_POST['data'];
+    if(isset($plugin_packs)){
     ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="plugin-packs">
@@ -66,7 +67,7 @@ function plugin_packs_options_page_html()
                 </div>
             </div>
             <?php
-        }
+        }}
         ?>
     </div>
     <?php
