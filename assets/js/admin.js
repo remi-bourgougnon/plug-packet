@@ -1,14 +1,7 @@
 jQuery(document).ready(function($) {
-    $.getJSON( json_url.jsonurl, function( data ) {
-        jQuery.post('/wp-admin/admin.php?page=plugpacket', { data: data})
-        jQuery.each(data, function(key,value){
-            $('.plugin-pack-image').find('img').attr('src', '/wp-content/plugins/' + value.image);
-        });
-    });
-
-
     jQuery(".install-pack-button").click(function(){
-        jQuery.post(ajaxurl, { action: "plugin_pack_installer"}, function() {
+        var data = $(this).attr('class').split(' ')[1];
+        jQuery.post(ajaxurl, { action: "plugin_pack_installer", data: data}, function() {
             if(jQuery('.install-pack-button').find('i').hasClass("fa-refresh fa-spin")) {
                 jQuery('.install-pack-button').find('i').addClass("fa-download").removeClass("fa-refresh fa-spin");
             }

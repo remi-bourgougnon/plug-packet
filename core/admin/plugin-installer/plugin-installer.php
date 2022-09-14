@@ -9,9 +9,8 @@ require_once(ABSPATH . '/wp-admin/includes/plugin.php');
 
 class Plug_Packet_Plugin_Installer
 {
-    function plugin_packs_installer($plugins)
+    function plugin_packs_installer($plugins,$file_names)
     {
-        $simple_ssl = 'rlrsssl-really-simple-ssl';
         $wordpress_api = plugins_api('plugin_information',
             array(
                 'slug' => $plugins
@@ -21,14 +20,14 @@ class Plug_Packet_Plugin_Installer
         $plugin_upgrader = new Plugin_Upgrader($ajax_upgrader_skin);
         $plugin_upgrader->install($wordpress_api->download_link);
 
-        if (strpos($simple_ssl, $plugins) == false) {
+        if (strpos($file_names, $plugins) == false) {
             readfile($plugins . '/' . $plugins . '.php');
             activate_plugin($plugins . '/' . $plugins . '.php');
         }
 
-        elseif (strpos($simple_ssl, $plugins) !== false) {
-            readfile($plugins . '/' . $simple_ssl . '.php');
-            activate_plugin($plugins . '/' . $simple_ssl . '.php');
+        if (strpos($file_names, $plugins) !== false) {
+            readfile($plugins . '/' . $file_names . '.php');
+            activate_plugin($plugins . '/' . $file_names . '.php');
         }
     }
 }
