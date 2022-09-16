@@ -9,7 +9,7 @@ require_once(ABSPATH . '/wp-admin/includes/plugin.php');
 
 class Plug_Packet_Plugin_Installer
 {
-    function plugin_packs_installer($plugins,$file_names)
+    function plugin_packs_installer($plugins, $file_names)
     {
         $wordpress_api = plugins_api('plugin_information',
             array(
@@ -20,14 +20,7 @@ class Plug_Packet_Plugin_Installer
         $plugin_upgrader = new Plugin_Upgrader($ajax_upgrader_skin);
         $plugin_upgrader->install($wordpress_api->download_link);
 
-        if (strpos($file_names, $plugins) == false) {
-            readfile($plugins . '/' . $plugins . '.php');
-            activate_plugin($plugins . '/' . $plugins . '.php');
-        }
-
-        if (strpos($file_names, $plugins) !== false) {
-            readfile($plugins . '/' . $file_names . '.php');
-            activate_plugin($plugins . '/' . $file_names . '.php');
-        }
+        readfile($plugins . '/' . $file_names . '.php');
+        activate_plugin($plugins . '/' . $file_names . '.php');
     }
 }
