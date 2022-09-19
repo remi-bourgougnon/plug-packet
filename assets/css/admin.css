@@ -1,52 +1,52 @@
-.plugin-packs {
+.plp-packs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 2%;
 }
 
-.plugin-packs .plugin-pack {
+.plp-packs .plp-pack {
     background: white;
     margin: 5% 10%;
     max-width: 300px;
     padding: 0;
 }
 
-.plugin-packs .plugin-pack .plugin-pack-image {
+.plp-packs .plp-pack .plp-pack-image {
     margin: 0;
     padding: 0;
 }
 
-.plugin-packs .plugin-pack .plugin-pack-image img {
+.plp-packs .plp-pack .plp-pack-image img {
     max-width: 100%;
     height: auto;
 }
 
-.plugin-packs .plugin-pack .plugin-pack-title {
+.plp-packs .plp-pack .plp-pack-title {
     margin: 0;
     padding: 0.5em 0.5em 0 0.6em;
     font-size: 20px;
     font-weight: bold;
 }
 
-.plugin-packs .plugin-pack .plugin-pack-list {
+.plp-packs .plp-pack .plp-pack-list {
     margin: 0;
     padding: 0.5em 0.5em 0.5em 1em;
 }
 
-.plugin-packs .plugin-pack .plugin-pack-list ul {
+.plp-packs .plp-pack .plp-pack-list ul {
     list-style-type: disc;
     margin-left: 5%;
 }
 
-.plugin-packs .plugin-pack .plugin-pack-list .plp-checkmark {
+.plp-packs .plp-pack .plp-pack-list .plp-checkmark {
     color: green;
 }
 
-.plugin-packs .plugin-pack .plugin-pack-buttons {
+.plp-packs .plp-pack .plp-pack-buttons {
     padding: 0.5em 0.5em 0.5em 0.7em;
 }
 
-.plugin-packs .plugin-pack .plugin-pack-buttons button {
+.plp-packs .plp-pack .plp-pack-buttons button {
     background-color: #0E8BCA;
     border: none;
     color: white;
@@ -61,6 +61,6 @@
     border-radius: 12px;
 }
 
-.plugin-packs .plugin-pack .plugin-pack-buttons button:hover {
+.plp-packs .plp-pack .plp-pack-buttons button:hover {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
 }

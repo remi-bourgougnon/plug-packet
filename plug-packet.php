@@ -28,16 +28,16 @@
 /**
  * The function is fired after WordPress has loaded. the action includes are admin.php file which is the main php file for the plugin admin settings page.
  */
-function plug_packet_settings_page() {
+function plp_settings_page() {
     include 'core/admin/admin.php';
 }
-add_action( 'init', 'plug_packet_settings_page' );
+add_action( 'init', 'plp_settings_page' );
 
 
 /**
  * Sets the activation hook for the plugin. The function that we created above is then called.
  */
-function plug_packet_activate() {
-    plug_packet_settings_page();
+function plp_activate() {
+    plp_settings_page();
 }
-register_activation_hook( __FILE__, 'plugin_packet_activate' );
+register_activation_hook( __FILE__, 'plp_activate' );

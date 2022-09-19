@@ -7,9 +7,9 @@ require_once(ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php');
 require_once(ABSPATH . '/wp-admin/includes/plugin.php');
 
 
-class Plug_Packet_Plugin_Installer
+class Plp_Plugin_Installer
 {
-    function plugin_packs_installer($plugins, $file_names) //the plugin name and the main plugin file name are sent
+    function plp_packs_installer($plugins, $file_names) //the plugin name and the main plugin file name are sent
     {
         $wordpress_api = plugins_api('plugin_information', ['slug' => $plugins]); //retrieves plugin installer pages of the plugin sent by the 'admin.php' page
         $ajax_upgrader_skin = new WP_Ajax_Upgrader_Skin(); //creates and ajax upgrader skin
