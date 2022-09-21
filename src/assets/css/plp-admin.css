@@ -64,3 +64,9 @@
 .plp-packs .plp-pack .plp-pack-buttons button:hover {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
 }
+
+.plp-error-message {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
