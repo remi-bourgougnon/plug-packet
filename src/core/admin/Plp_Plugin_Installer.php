@@ -37,7 +37,6 @@ class Plp_Plugin_Installer
             throw new \Exception(sprintf('Installation failed with explanation: %s', $installed->get_error_message()));
         }
 
-        readfile($plugin_slug . '/' . $plugin_file . '.php'); // Wait until the plugin file name exists
         $activated = activate_plugin($plugin_slug . '/' . $plugin_file . '.php');
         if ($activated instanceof \WP_Error) {
             throw new \Exception(sprintf('Activation failed with explanation: %s', $activated->get_error_message()));
