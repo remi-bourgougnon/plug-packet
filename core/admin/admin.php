@@ -24,36 +24,58 @@ add_action('admin_menu', 'plp_options_page');
 function plp_options_page_html()
 {
     $plp_packs = [
-        'basicpack' => [
-            'title' => 'Basic Pack',
+        'basicpack_1' => [
+            'title' => 'Basic Pack 1',
             'list' => [
                 'Elementor',
                 'UpdraftPlus',
-                'Really Simple SSL'
+                'Really Simple SSL',
+                'Wordfence Security',
+                'Site Kit by Google',
+                'Yoast SEO'
             ],
             'image' => 'plug-packet/assets/images/image_pack.png',
             'plugins' => [
                 'elementor',
                 'updraftplus',
                 'really-simple-ssl',
+                'wordfence',
+                'google-site-kit',
+                'wordpress-seo'
             ],
             'plugin_files' => [
                 'elementor',
                 'updraftplus',
-                'rlrsssl-really-simple-ssl'
+                'rlrsssl-really-simple-ssl',
+                'wordfence',
+                'google-site-kit',
+                'wp-seo'
             ]
         ],
-        'testpack' => [
-            'title' => 'Test Pack',
+        'basicpack_2' => [
+            'title' => 'Basic Pack 2',
             'list' => [
+                'Beaver Builder',
                 'Jetpack',
+                'WP Force SSL',
+                'MonsterInsights',
+                'All in One SEO'
+
             ],
             'image' => 'plug-packet/assets/images/image_pack.png',
             'plugins' => [
+                'beaver-builder-lite-version',
                 'jetpack',
+                'wp-force-ssl',
+                'google-analytics-for-wordpress',
+                'all-in-one-seo-pack'
             ],
             'plugin_files' => [
+                'fl-builder',
                 'jetpack',
+                'wp-force-ssl',
+                'googleanalytics',
+                'all_in_one_seo_pack'
             ]
         ]
     ];
@@ -93,24 +115,38 @@ function plp_options_page_html()
 function plp_pack_installer()
 {
     $plp_packs = [
-        'basicpack' => [
+        'basicpack_1' => [
             'plugins' => [
                 'elementor',
                 'updraftplus',
                 'really-simple-ssl',
+                'wordfence',
+                'google-site-kit',
+                'wordpress-seo'
             ],
             'plugin_files' => [
                 'elementor',
                 'updraftplus',
-                'rlrsssl-really-simple-ssl'
+                'rlrsssl-really-simple-ssl',
+                'wordfence',
+                'google-site-kit',
+                'wp-seo'
             ]
         ],
-        'testpack' => [
+        'basicpack_2' => [
             'plugins' => [
+                'beaver-builder-lite-version',
                 'jetpack',
+                'wp-force-ssl',
+                'google-analytics-for-wordpress',
+                'all-in-one-seo-pack'
             ],
             'plugin_files' => [
+                'fl-builder',
                 'jetpack',
+                'wp-force-ssl',
+                'googleanalytics',
+                'all_in_one_seo_pack'
             ]
         ]
     ];
@@ -125,4 +161,4 @@ function plp_pack_installer()
     wp_die();
 }
 
-add_action('wp_ajax_plugin_pack_installer', 'plp_pack_installer');
+add_action('wp_ajax_plp_pack_installer', 'plp_pack_installer');
