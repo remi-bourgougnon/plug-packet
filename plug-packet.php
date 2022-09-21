@@ -23,13 +23,22 @@
  * GNU General Public License for more details.
 */
 
+use plp\core\admin\Plp_Admin;
 
 
 /**
  * The function is fired after WordPress has loaded. the action includes are admin.php file which is the main php file for the plugin admin settings page.
  */
 function plp_settings_page() {
-    include 'core/admin/admin.php';
+    /**
+     * PSR-4 autoloader from composer
+     */
+    require_once __DIR__ . '/vendor/autoload.php';
+
+    /**
+     *  Initialize the plugin
+     */
+    new Plp_Admin();
 }
 add_action( 'init', 'plp_settings_page' );
 
