@@ -39,7 +39,7 @@ function plp_options_page_html()
                 'elementor',
                 'updraftplus',
                 'really-simple-ssl',
-                'wordfence',
+                'wordfences',
                 'google-site-kit',
                 'wordpress-seo'
             ],

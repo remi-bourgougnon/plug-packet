@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       PlugPacket
  * Plugin URI:        https://plugpacket.com/to/do/
- * Description:       PlugPacket provides you with different packs to install your favorite plugins easily.Maybe you don't know which plugin to install or you don't want to install each plugin manually. PlugPacket does all that for you.
+ * Description:       PlugPacket provides you with different packs to install your favorite plugins easily. PlugPacket does all that for you.
  * Version:           1.0.0
  * Author:            to do
  * Author URI:        https://plugpacket.com/to/do/
