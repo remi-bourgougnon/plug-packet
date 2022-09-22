@@ -65,6 +65,10 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
 }
 
+.plp-packs .plp-pack .plp-pack-buttons .plp-install-pack-button-disabled {
+    background-color: black;
+}
+
 .plp-error-message {
     color: red;
     text-align: center;

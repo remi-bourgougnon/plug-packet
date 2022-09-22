@@ -1,7 +1,6 @@
 jQuery(document).ready(function ($) {
 
     function call_ajax(index, pack_plugins, button_clicked_icon) {
-
         let pack_plugin = pack_plugins[index];
 
         $.post(ajaxurl, {
@@ -21,11 +20,12 @@ jQuery(document).ready(function ($) {
                 plugin_icon.show();
             }
 
-            if (index < pack_plugins.length) {
-                call_ajax(index++, pack_plugins);
-            } else {
+            if (index < pack_plugins.length - 1) {
+                call_ajax(++index, pack_plugins, button_clicked_icon);
+            } else{
                 // Stop loading icon when every plugin ajax is done
                 button_clicked_icon.addClass("fa-download").removeClass("fa-refresh fa-spin");
+                $('.plp-install-pack-button-disabled').prop('disabled', false).addClass('plp-install-pack-button').removeClass('plp-install-pack-button-disabled');
             }
 
         });
@@ -33,8 +33,7 @@ jQuery(document).ready(function ($) {
 
     $(".plp-install-pack-button").click(function () {
         let pack_plugins = $(this).data('plp-pack-plugins');
-        let button_clicked = $(this);
-        let button_clicked_icon = button_clicked.find('.plp-button-icon');
+        let button_clicked_icon = $(this).find('.plp-button-icon');
         let plugin_icons = $(this).closest('.plp-pack').find('.plp-checkmark');
 
         // Loading icons
@@ -44,7 +43,7 @@ jQuery(document).ready(function ($) {
         // Call ajax on each plugin synchronously and recursively
         call_ajax(0, pack_plugins, button_clicked_icon);
 
-    });
+        $('button').not(this).prop('disabled', true).addClass('plp-install-pack-button-disabled').removeClass('plp-install-pack-button');
 
-    // $('button').not(this).prop('disabled', true);
+    });
 });
