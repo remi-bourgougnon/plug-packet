@@ -86,14 +86,15 @@ class Plp_Admin
                     <div class="plp-pack-list">
                         <ul><?php foreach ($plp_pack['plugins'] as $plugin) {
                                 if (is_plugin_active($plugin['slug'] . '/' . $plugin['file'] . '.php')) {
-                                    echo '<li>' . $plugin['name'] . ' <i class="fa fa-check-circle plp-checkmark plp-plugin-icon"></i></li>';
+                                    echo sprintf('<li class="%s">%s <i class="fa fa-check-circle plp-checkmark plp-plugin-icon"></i></li>', $plugin["slug"], $plugin['name']);
                                 } else {
-                                    echo '<li>' . $plugin['name'] . ' </li>';
+                                    echo sprintf('<li class="%s">%s <i class="fa fa-check-circle plp-checkmark plp-plugin-icon" style="display: none"></i></li>', $plugin["slug"], $plugin['name']);
                                 }
                             } ?></ul>
                     </div>
                     <div class="plp-pack-buttons">
-                        <button class="plp-install-pack-button" data-plp-packname="<?php echo $plp_pack_name; ?>"><i
+                        <button class="plp-install-pack-button"
+                                data-plp-pack-plugins='<?php echo wp_json_encode($plp_pack['plugins']); ?>'><i
                                     class="fa fa-download plp-button-icon"></i>
                             Install and Activate Pack
                         </button>
@@ -113,16 +114,14 @@ class Plp_Admin
     {
         $errors = [];
 
-        if (!empty($_POST['pack_name']) && !empty(self::PACKS_DEFINITION[$_POST['pack_name']])) {
-            $pack_definition = self::PACKS_DEFINITION[$_POST['pack_name']];
+        if (!empty($_POST['pack_plugin'])) {
+            $plugin = $_POST['pack_plugin'];
             $plugin_pack_installer = new Plp_Plugin_Installer();
-            foreach ($pack_definition['plugins'] as $plugin) {
-                if (false === is_plugin_active($plugin['slug'] . '/' . $plugin['file'] . '.php')) {
-                    try {
-                        $plugin_pack_installer->install_and_activate_plugin($plugin['slug'], $plugin['file']);
-                    } catch (\Exception $e) {
-                        $errors[] = sprintf('Error on plugin %s: %s', $plugin['name'], $e->getMessage());
-                    }
+            if (false === is_plugin_active($plugin['slug'] . '/' . $plugin['file'] . '.php')) {
+                try {
+                    $plugin_pack_installer->install_and_activate_plugin($plugin['slug'], $plugin['file']);
+                } catch (\Exception $e) {
+                    $errors[] = sprintf('Error on plugin %s: %s', $plugin['name'], $e->getMessage());
                 }
             }
         } else {
@@ -130,7 +129,7 @@ class Plp_Admin
         }
 
         if (!empty($errors)) {
-            echo implode('<br>',$errors);
+            echo implode('<br>', $errors);
         }
 
         wp_die();

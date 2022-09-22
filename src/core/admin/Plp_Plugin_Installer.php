@@ -31,7 +31,7 @@ class Plp_Plugin_Installer
         $plugin_upgrader = new Plugin_Upgrader($ajax_upgrader_skin);
         $installed = $plugin_upgrader->install($wordpress_api->download_link);
 
-        if ((false === $installed) || is_null($installed)) {
+        if ((false === $installed)) {
             throw new \Exception('Installation failed without any explanation');
         } elseif ($installed instanceof \WP_Error) {
             throw new \Exception(sprintf('Installation failed with explanation: %s', $installed->get_error_message()));
