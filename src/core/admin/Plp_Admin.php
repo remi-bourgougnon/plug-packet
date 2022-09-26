@@ -86,9 +86,9 @@ class Plp_Admin
                     <div class="plp-pack-list">
                         <ul><?php foreach ($plp_pack['plugins'] as $plugin) {
                                 if (is_plugin_active($plugin['slug'] . '/' . $plugin['file'] . '.php')) {
-                                    echo sprintf('<li class="%s">%s <i class="fa fa-check-circle plp-checkmark plp-plugin-icon"></i></li>', $plugin["slug"], $plugin['name']);
+                                    echo sprintf('<li class="%s">%s <i class="fa fa-check-circle plp-checkmark plp-plugin-icon-checkmark"></i></li>', $plugin["slug"], $plugin['name']);
                                 } else {
-                                    echo sprintf('<li class="%s">%s <i class="fa fa-check-circle plp-checkmark plp-plugin-icon" style="display: none"></i></li>', $plugin["slug"], $plugin['name']);
+                                    echo sprintf('<li data-plp-pack-plugin={"slug":"%s","file":"%s"} class="%s">%s <i class="fa fa-circle-o plp-checkmark plp-plugin-icon-empty-circle"></i></li>',$plugin["slug"] ,$plugin["file"],$plugin["slug"], $plugin['name']);
                                 }
                             } ?></ul>
                     </div>
