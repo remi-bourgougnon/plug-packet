@@ -42,6 +42,10 @@
     color: green;
 }
 
+.plp-packs .plp-pack .plp-pack-list .plp-plugin-icon-disabled {
+    color: red;
+}
+
 .plp-packs .plp-pack .plp-pack-buttons {
     padding: 0.5em 0.5em 0.5em 0.7em;
 }
