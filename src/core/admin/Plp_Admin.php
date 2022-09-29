@@ -11,7 +11,7 @@ class Plp_Admin
     const PACKS_DEFINITION = [
         'basicpack_1' => [
             'title' => 'Basic Pack 1',
-            'image' => 'image_pack.png',
+            'image' => 'Basic_Pack_Base_image.png',
             'plugins' => [
                 ['name' => 'Elementor', 'slug' => 'elementor', 'file' => 'elementor',],
                 ['name' => 'UpdraftPlus', 'slug' => 'updraftplus', 'file' => 'updraftplus',],
@@ -23,7 +23,7 @@ class Plp_Admin
         ],
         'basicpack_2' => [
             'title' => 'Basic Pack 2',
-            'image' => 'image_pack.png',
+            'image' => 'Basic_Pack_Base_image.png',
             'plugins' => [
                 ['name' => 'Beaver Builder', 'slug' => 'beaver-builder-lite-version', 'file' => 'fl-builder',],
                 ['name' => 'Jetpack', 'slug' => 'jetpack', 'file' => 'jetpack',],
