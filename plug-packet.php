@@ -1,16 +1,10 @@
 <?php
 /**
  * Plugin Name:       PlugPacket
- * Plugin URI:        https://plugpacket.com/to/do/
- * Description:       PlugPacket provides you with different packs to install your favorite plugins easily. PlugPacket does all that for you.
+ * Description:       PlugPacket provides you with different packs to install your favorite plugins easily. PlugPacket does all that for you with a click of a button.
  * Version:           1.0.0
- * Author:            to do
- * Author URI:        https://plugpacket.com/to/do/
- * License:           to do
- * License URI:       to do
- * Update URI:        to do
- * Text Domain:       to do
- * Domain Path:       to do
+ * Author: PlugPacket Team
+ *
  * PlugPacket is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
