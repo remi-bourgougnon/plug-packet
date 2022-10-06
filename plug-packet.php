@@ -4,6 +4,7 @@
  * Description:       PlugPacket provides you with different packs to install your favorite plugins easily. PlugPacket does all that for you with a click of a button.
  * Version:           1.0.0
  * Author: PlugPacket Team
+ * License: GPL2
  *
  * PlugPacket is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
