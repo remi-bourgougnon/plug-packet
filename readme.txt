@@ -5,7 +5,7 @@ Stable tag: 1.0
 License: GPL2
 Source code: https://github.com/remi-bourgougnon/plug-packet
 
-PlugPacket provides you with different packs to install your favorite plugins easily.
+PlugPacket provides you with different packs to install your favorite plugins easily, based on our selection.
 PlugPacket does all that for you with only one click of a button.
 
 == Description ==
