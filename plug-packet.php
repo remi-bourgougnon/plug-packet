@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       PlugPacket
  * Description:       PlugPacket provides you with different packs to install your favorite plugins easily. PlugPacket does all that for you with a click of a button.
- * Version:           1.0.0
+ * Version:           1.0
  * Author: PlugPacket Team
  * License: GPL2
  *
@@ -18,6 +18,7 @@
 
 use plp\core\admin\Plp_Admin;
 
+define('PLP_VERSION', '1.0');
 
 /**
  * The function is fired after WordPress has loaded. the action includes are admin.php file which is the main php file for the plugin admin settings page.

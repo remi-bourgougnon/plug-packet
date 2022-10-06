@@ -37,8 +37,8 @@ class Plp_Admin
     public function __construct()
     {
         // Enqueue the css and the js files
-        wp_enqueue_style('plp_admin_css', plugins_url() . '/plug-packet/src/assets/css/plp-admin.css');
-        wp_enqueue_script('plp_admin_js', plugins_url() . '/plug-packet/src/assets/js/plp-admin.js');
+        wp_enqueue_style('plp_admin_css', plugins_url() . '/plug-packet/src/assets/css/plp-admin.css', null, PLP_VERSION);
+        wp_enqueue_script('plp_admin_js', plugins_url() . '/plug-packet/src/assets/js/plp-admin.js', null, PLP_VERSION);
 
         add_action('admin_menu', [$this, 'generate_packs_menu']);
 
