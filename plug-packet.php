@@ -19,6 +19,11 @@
 use plp\core\admin\Plp_Admin;
 
 define('PLP_VERSION', '1.0');
+define('PLP_DIR', dirname(__FILE__));
+define('PLP_DIR_URL', plugin_dir_url(__FILE__));
+define('PLP_DIR_IMAGE_URL', PLP_DIR_URL . 'src/assets/images/');
+define('PLP_DIR_IMAGE_CSS', PLP_DIR_URL . 'src/assets/css/');
+define('PLP_DIR_IMAGE_JS', PLP_DIR_URL . 'src/assets/js/');
 
 /**
  * The function is fired after WordPress has loaded. the action includes are admin.php file which is the main php file for the plugin admin settings page.

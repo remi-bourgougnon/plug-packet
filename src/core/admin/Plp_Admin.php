@@ -6,8 +6,6 @@ use mysql_xdevapi\Exception;
 
 class Plp_Admin
 {
-    const DIR_IMAGES = '/plug-packet/src/assets/images/';
-
     const PACKS_DEFINITION = [
         'basicpack_1' => [
             'title' => 'Basic Pack 1',
@@ -37,8 +35,8 @@ class Plp_Admin
     public function __construct()
     {
         // Enqueue the css and the js files
-        wp_enqueue_style('plp_admin_css', plugins_url() . '/plug-packet/src/assets/css/plp-admin.css', null, PLP_VERSION);
-        wp_enqueue_script('plp_admin_js', plugins_url() . '/plug-packet/src/assets/js/plp-admin.js', null, PLP_VERSION);
+        wp_enqueue_style('plp_admin_css', sprintf('%s%s', PLP_DIR_IMAGE_CSS, 'plp-admin.css'), null, PLP_VERSION);
+        wp_enqueue_script('plp_admin_js', sprintf('%s%s', PLP_DIR_IMAGE_JS, 'plp-admin.js'), null, PLP_VERSION);
 
         add_action('admin_menu', [$this, 'generate_packs_menu']);
 
@@ -71,8 +69,6 @@ class Plp_Admin
     function generate_packs_html(): void
     {
         ?>
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <div class="plp-packs">
             <?php
             foreach (self::PACKS_DEFINITION as $plp_pack_name => $plp_pack) {
@@ -80,15 +76,15 @@ class Plp_Admin
                 ?>
                 <div class="plp-pack">
                     <div class="plp-pack-image"><img
-                                src="<?php echo sprintf('%s%s%s', plugins_url(), self::DIR_IMAGES, $plp_pack['image']); ?>">
+                                src="<?php esc_html_e(sprintf('%s%s', PLP_DIR_IMAGE_URL, $plp_pack['image'])); ?>">
                     </div>
-                    <div class="plp-pack-title"><?php echo $plp_pack['title'] ?></div>
+                    <div class="plp-pack-title"><?php esc_html_e($plp_pack['title']) ?></div>
                     <div class="plp-pack-list">
                         <ul><?php foreach ($plp_pack['plugins'] as $plugin) {
                                 if (is_plugin_active($plugin['slug'] . '/' . $plugin['file'] . '.php')) {
-                                    echo sprintf('<li data-plp-pack-plugin={"slug":"%s","file":"%s"} class="%s">%s <i class="fa fa-check-circle plp-checkmark plp-plugin-icon-checkmark"></i></li>', $plugin["slug"], $plugin["file"], $plugin["slug"], $plugin['name']);
+                                    echo sprintf('<li data-plp-pack-plugin={"slug":"%s","file":"%s"} class="%s">%s <i class="fa fa-check-circle plp-checkmark plp-plugin-icon-checkmark"></i></li>', esc_attr($plugin["slug"]), esc_attr($plugin["file"]), esc_attr($plugin["slug"]), esc_html($plugin['name']));
                                 } else {
-                                    echo sprintf('<li data-plp-pack-plugin={"slug":"%s","file":"%s"} class="%s">%s <i class="fa fa-circle-o plp-checkmark plp-plugin-icon-empty-circle"></i><i class="fa fa-times-circle plp-plugin-icon-disabled" style="display: none"></i></li>', $plugin["slug"], $plugin["file"], $plugin["slug"], $plugin['name']);
+                                    echo sprintf('<li data-plp-pack-plugin={"slug":"%s","file":"%s"} class="%s">%s <i class="fa fa-circle-o plp-checkmark plp-plugin-icon-empty-circle"></i><i class="fa fa-times-circle plp-plugin-icon-disabled" style="display: none"></i></li>', esc_attr($plugin["slug"]), esc_attr($plugin["file"]), esc_attr($plugin["slug"]), esc_html($plugin['name']));
                                 }
                             } ?></ul>
                     </div>
@@ -115,7 +111,12 @@ class Plp_Admin
         $errors = [];
 
         if (!empty($_POST['pack_plugin'])) {
-            $plugin = $_POST['pack_plugin'];
+            $plugin = [];
+            foreach ($_POST['pack_plugin'] as $plugin_key => $plugin_values) {
+                $key = sanitize_text_field($plugin_key);
+                $value = sanitize_text_field($plugin_values);
+                $plugin[$key] = $value;
+            }
             $plugin_pack_installer = new Plp_Plugin_Installer();
             if (false === is_plugin_active($plugin['slug'] . '/' . $plugin['file'] . '.php')) {
                 try {
@@ -129,7 +130,11 @@ class Plp_Admin
         }
 
         if (!empty($errors)) {
-            echo implode('<br>', $errors);
+            $every_error = [];
+            foreach ($errors as $error) {
+                $every_error[] = esc_html($error);
+            }
+            echo implode('<br>', $every_error);
         }
 
         wp_die();
