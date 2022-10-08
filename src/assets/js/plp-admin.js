@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
         }, function (data) {
 
             const plugin_icon = $('.' + pack_plugin['slug']).find('.plp-checkmark');
-            plugin_icon.addClass("fa-check-circle").removeClass("fa-refresh fa-spin");
+            plugin_icon.addClass("plp-circle-check").removeClass("plp-rotate");
 
             // Error management
             if (data !== undefined && data !== '') {
@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
             } else {
                 // Stop loading icon when every plugin ajax is done
                 if (button_clicked_icon !== null) {
-                    button_clicked_icon.addClass("fa-download").removeClass("fa-refresh fa-spin");
+                    button_clicked_icon.addClass("plp-download").removeClass("plp-rotate-button");
                     $('.plp-install-pack-button').prop('disabled', false);
                 }
                 $('.plp-install-pack-button-disabled').prop('disabled', false).addClass('plp-install-pack-button').removeClass('plp-install-pack-button-disabled');
@@ -42,8 +42,8 @@ jQuery(document).ready(function ($) {
         let plugin_icons = $(this).closest('.plp-pack').find('.plp-checkmark');
 
         // Loading icons
-        button_clicked_icon.addClass("fa-refresh fa-spin").removeClass("fa-download");
-        plugin_icons.addClass("fa-refresh fa-spin").removeClass("fa-check-circle").removeClass("fa-circle-o");
+        button_clicked_icon.addClass("plp-rotate-button").removeClass("plp-download");
+        plugin_icons.addClass("plp-rotate").removeClass("plp-circle-check").removeClass("plp-circle");
         $('.plp-plugin-icon-empty-circle').not(plugin_icons).hide();
         $('.plp-plugin-icon-empty-circle').not(plugin_icons).closest('li').find('.plp-plugin-icon-disabled').show();
 
@@ -59,7 +59,7 @@ jQuery(document).ready(function ($) {
         let plugin_icons = $(this);
 
         // Loading icons
-        plugin_icons.addClass("fa-refresh fa-spin").removeClass("fa-circle-o");
+        plugin_icons.addClass("plp-rotate").removeClass("plp-circle");
         $('.plp-plugin-icon-empty-circle').not(plugin_icons).hide();
         $('.plp-plugin-icon-empty-circle').not(plugin_icons).closest('li').find('.plp-plugin-icon-disabled').show();
 

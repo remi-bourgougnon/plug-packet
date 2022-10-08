@@ -82,16 +82,16 @@ class Plp_Admin
                     <div class="plp-pack-list">
                         <ul><?php foreach ($plp_pack['plugins'] as $plugin) {
                                 if (is_plugin_active($plugin['slug'] . '/' . $plugin['file'] . '.php')) {
-                                    echo sprintf('<li data-plp-pack-plugin={"slug":"%s","file":"%s"} class="%s">%s <i class="fa fa-check-circle plp-checkmark plp-plugin-icon-checkmark"></i></li>', esc_attr($plugin["slug"]), esc_attr($plugin["file"]), esc_attr($plugin["slug"]), esc_html($plugin['name']));
+                                    echo sprintf('<li data-plp-pack-plugin={"slug":"%s","file":"%s"} class="%s">%s <i class="plp-circle-check plp-checkmark plp-plugin-icon-checkmark"></i></li>', esc_attr($plugin["slug"]), esc_attr($plugin["file"]), esc_attr($plugin["slug"]), esc_html($plugin['name']));
                                 } else {
-                                    echo sprintf('<li data-plp-pack-plugin={"slug":"%s","file":"%s"} class="%s">%s <i class="fa fa-circle-o plp-checkmark plp-plugin-icon-empty-circle"></i><i class="fa fa-times-circle plp-plugin-icon-disabled" style="display: none"></i></li>', esc_attr($plugin["slug"]), esc_attr($plugin["file"]), esc_attr($plugin["slug"]), esc_html($plugin['name']));
+                                    echo sprintf('<li data-plp-pack-plugin={"slug":"%s","file":"%s"} class="%s">%s <i class="plp-circle plp-checkmark plp-plugin-icon-empty-circle"></i><i class="plp-circle-xmark plp-plugin-icon-disabled" style="display: none"></i></li>', esc_attr($plugin["slug"]), esc_attr($plugin["file"]), esc_attr($plugin["slug"]), esc_html($plugin['name']));
                                 }
                             } ?></ul>
                     </div>
                     <div class="plp-pack-buttons">
                         <button class="plp-install-pack-button"
                                 data-plp-pack-plugins='<?php echo wp_json_encode($plp_pack['plugins']); ?>'><i
-                                    class="fa fa-download plp-button-icon"></i>
+                                    class="plp-download plp-button-icon"></i>
                             Install and Activate Pack
                         </button>
                     </div>

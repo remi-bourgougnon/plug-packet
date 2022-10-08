@@ -46,6 +46,30 @@
     color: red;
 }
 
+.plp-circle::before {
+    content: url("../images/circle.svg");
+}
+
+.plp-download::before {
+    content: url("../images/download.svg");
+}
+
+.plp-circle-check::before {
+    content: url("../images/circle-check.svg");
+}
+
+.plp-rotate::before {
+    content: url("../images/rotate.svg");
+}
+
+.plp-rotate-button::before {
+    content: url("../images/rotate-button.svg");
+}
+
+.plp-circle-xmark::before {
+    content: url("../images/circle-xmark.svg");
+}
+
 .plp-packs .plp-pack .plp-pack-buttons {
     padding: 0.5em 0.5em 0.5em 0.7em;
 }

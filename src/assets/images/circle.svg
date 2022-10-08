@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 10 10"
+   version="1.1"
+   id="svg184"
+   sodipodi:docname="circle.svg"
+   inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
+   inkscape:export-filename="../../../../../../../../../../circle.png"
+   inkscape:export-xdpi="96.815575"
+   inkscape:export-ydpi="96.815575"
+   width="10"
+   height="10"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs188" />
+  <sodipodi:namedview
+     id="namedview186"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="20.045393"
+     inkscape:cx="0.79818839"
+     inkscape:cy="5.8866394"
+     inkscape:window-width="1440"
+     inkscape:window-height="754"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg184" />
+  <!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+  <path
+     d="m 9.9452784,4.9787617 c 0,2.7454668 -2.2194267,4.9705753 -4.9578793,4.9705753 -2.7384537,0 -4.95788062,-2.2251085 -4.95788062,-4.9705753 0,-2.7454659 2.21942692,-4.97057532 4.95788062,-4.97057532 2.7384526,0 4.9578793,2.22510942 4.9578793,4.97057532 z M 4.9873991,0.94016934 c -2.2252369,0 -4.028277,1.80765836 -4.028277,4.03859236 0,2.2309342 1.8030401,4.0385924 4.028277,4.0385924 2.2252358,0 4.0282773,-1.8076582 4.0282773,-4.0385924 0,-2.230934 -1.8030415,-4.03859236 -4.0282773,-4.03859236 z"
+     id="path182"
+     style="fill:#008000;fill-opacity:1;stroke-width:0.0193914" />
+</svg>
