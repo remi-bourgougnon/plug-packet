@@ -59,11 +59,11 @@
 }
 
 .plp-rotate::before {
-    content: url("../images/rotate.svg");
+    content: url("../images/rotate.gif");
 }
 
 .plp-rotate-button::before {
-    content: url("../images/rotate-button.svg");
+    content: url("../images/rotate-button.gif");
 }
 
 .plp-circle-xmark::before {
