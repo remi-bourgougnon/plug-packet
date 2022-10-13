@@ -130,11 +130,9 @@ class Plp_Admin
         }
 
         if (!empty($errors)) {
-            $every_error = [];
             foreach ($errors as $error) {
-                $every_error[] = esc_html($error);
+                echo '<br>' . esc_html($error);
             }
-            echo implode('<br>', $every_error);
         }
 
         wp_die();
