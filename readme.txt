@@ -1,7 +1,7 @@
 === PlugPacket ===
 Tags: plugins, packs, installer
 Tested up to: 6.0.1
-Stable tag: 1.0
+Stable tag: 1.2
 License: GPL2
 Source code: https://github.com/remi-bourgougnon/plug-packet
 
@@ -25,5 +25,5 @@ Furthermore, PlugPacket displays which plugins are already activated by a green 
 3. The plugin has been activated
 
 == Changelog ==
-1.0
+1.2
 First release of the plugin

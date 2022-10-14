@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       PlugPacket
  * Description:       PlugPacket provides you with different packs to install your favorite plugins easily. PlugPacket does all that for you with a click of a button.
- * Version:           1.0
+ * Version:           1.2
  * Author: PlugPacket Team
  * License: GPL2
  *
@@ -18,7 +18,7 @@
 
 use plp\core\admin\Plp_Admin;
 
-define('PLP_VERSION', '1.0');
+define('PLP_VERSION', '1.2');
 define('PLP_DIR', dirname(__FILE__));
 define('PLP_DIR_URL', plugin_dir_url(__FILE__));
 define('PLP_DIR_IMAGE_URL', PLP_DIR_URL . 'src/assets/images/');
