@@ -16,7 +16,8 @@ class Plp_Admin
                 ['name' => 'Really Simple SSL', 'slug' => 'really-simple-ssl', 'file' => 'rlrsssl-really-simple-ssl',],
                 ['name' => 'Wordfence Security', 'slug' => 'wordfence', 'file' => 'wordfence',],
                 ['name' => 'Site Kit by Google', 'slug' => 'google-site-kit', 'file' => 'google-site-kit',],
-                ['name' => 'Yoast SEO', 'slug' => 'wordpress-seo', 'file' => 'wp-seo',]
+                ['name' => 'Yoast SEO', 'slug' => 'wordpress-seo', 'file' => 'wp-seo',],
+                ['name' => 'WPSOLR Free', 'slug' => 'wpsolr-free', 'file' => 'wpsolr-free',]
             ],
         ],
         'basicpack_2' => [
